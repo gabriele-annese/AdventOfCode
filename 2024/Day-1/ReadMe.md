@@ -21,3 +21,30 @@ Copia il valore di questo cookie. Questo è il Session ID che dovrai utilizzare 
 Per motivi di sicurezza, è consigliato conservare il Session ID in variabili d'ambiente o in file di configurazione che non vengano mai pubblicati o condivisi (ad esempio, aggiungendo il file di configurazione a .gitignore se usi Git).
 
 
+# Creazione dell'esegibile
+
+Grazie a Go, è possibile creare un eseguibile per tutte le piattaforme a partire da un file .go
+
+```bash
+# Per Windows (64 bit)
+GOOS=windows GOARCH=amd64 go build -o myapp.exe
+
+# Per Linux (64 bit)
+GOOS=linux GOARCH=amd64 go build -o myapp_linux
+
+# Per macOS (64 bit)
+GOOS=darwin GOARCH=amd64 go build -o myapp_mac
+```
+
+Anche per `Android` e `IOS`
+```bash
+# Per Windows (64 bit)
+go install golang.org/x/mobile/cmd/gomobile@latest
+gomobile init
+
+# Per Android - genera un .aar 
+gomobile bind -target=android .
+
+# Per IOS - genera un .framework
+gomobile bind -target=ios .
+```
