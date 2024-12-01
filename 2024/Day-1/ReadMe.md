@@ -20,6 +20,13 @@ Copia il valore di questo cookie. Questo è il Session ID che dovrai utilizzare 
 >**Non condividere mai il Session ID con altri, poiché consente di accedere ai dati del tuo account.**
 Per motivi di sicurezza, è consigliato conservare il Session ID in variabili d'ambiente o in file di configurazione che non vengano mai pubblicati o condivisi (ad esempio, aggiungendo il file di configurazione a .gitignore se usi Git).
 
+### 3. Config.json
+Nella stessa directory del programma Go crea un file con il nome `Config.json` con questa struttura:
+```json
+{
+    "session": "INSERISCI IL TUO SESSION ID"
+}
+```
 
 # Creazione dell'esegibile
 
