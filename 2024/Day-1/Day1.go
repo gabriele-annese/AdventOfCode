@@ -95,7 +95,7 @@ func main() {
 	fmt.Println("\n************PRIMA PARTE************")
 	var leftNumbers, rightNumbers []int
 	//Recupero l'input tramite http e lo converto in due liste separate di numeri
-	body := httpInput.GetInput()
+	body := httpInput.GetInput("2024", "1")
 	CreateInput(body, &leftNumbers, &rightNumbers)
 
 	//Metto in ordine crescente le due liste tramite slice

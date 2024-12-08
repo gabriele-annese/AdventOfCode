@@ -2,6 +2,7 @@ package httpInput
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -12,9 +13,9 @@ type Config struct {
 }
 
 // Metodo per recuperare l'input dell'advent of code tramite http
-func GetInput() string {
+func GetInput(year string, day string) string {
 
-	url := "https://adventofcode.com/2024/day/1/input"
+	url := fmt.Sprintf("https://adventofcode.com/%s/day/%s/input", year, day)
 	config := getSessionsID()
 
 	// Creazione della reuquest
